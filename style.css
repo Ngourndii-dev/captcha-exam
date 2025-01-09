@@ -1,0 +1,40 @@
+body {
+    padding: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+#output {
+    white-space: pre-line;
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.button{
+    padding: 5px 3px;
+    background-color: #ffffff;
+    color: black;
+    font-weight: 200;
+}
+.button:hover{
+    scale: 1.1;
+}
+.title{
+    text-align: center;
+    color: blue;
+    font-weight: 900;
+}
+label{
+    color: black;
+    font-weight: 500;
+}
+hr{
+    color: white;
+}
+#sequenceForm{
+    margin: 0 auto;
+    width: 30%;
+}
