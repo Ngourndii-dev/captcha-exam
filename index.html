@@ -12,27 +12,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script type="text/javascript" src="https://09bd26e5e726.eu-west-3.captcha-sdk.awswaf.com/09bd26e5e726/jsapi.js" defer></script>
 </head>
-<script type="text/javascript">
-    function showMyCaptcha() {
-        var container = document.querySelector("#my-captcha-container");
-        
-        AwsWafCaptcha.renderCaptcha(container, {
-            apiKey: window.WAF_API_KEY,
-            onSuccess: captchaExampleSuccessFunction,
-            onError: captchaExampleErrorFunction,
-        });
-    }
-    
-    function captchaExampleSuccessFunction(wafToken) {
-        AwsWafIntegration.fetch("...WAF-protected URL...", {
-            method: "POST",
-        });
-    }
-    
-    function captchaExampleErrorFunction(error) {
-        alert(error);
-    }
-</script>
 
 <body>
     <h1 class="title">Generate Forbidden Sequence</h1>
@@ -41,7 +20,7 @@
             <label class="col-auto" for="numberInput">Enter a number: </label>
             <input class="col-auto" type="number" class="form-control" id="numberInput" min="1" max="1000" placeholder="1 à 1_000" required>
             <br>
-            <button class="col-auto button" type="submit" onclick="showMyCaptcha()">Generate</button>
+            <button class="col-auto button" type="submit">Generate</button>
         </form>
     </main>
     <br>
