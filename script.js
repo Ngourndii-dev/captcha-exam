@@ -1,3 +1,22 @@
+function showMyCaptcha() {
+        var container = document.querySelector("#my-captcha-container");
+        
+        AwsWafCaptcha.renderCaptcha(container, {
+            apiKey: window.WAF_API_KEY,
+            onSuccess: captchaExampleSuccessFunction,
+            onError: captchaExampleErrorFunction,
+        });
+    }
+    
+    function captchaExampleSuccessFunction(wafToken) {
+        AwsWafIntegration.fetch("...WAF-protected URL...", {
+            method: "POST",
+        });
+    }
+    
+    function captchaExampleErrorFunction(error) {
+        alert(error);
+    }
 document.getElementById('sequenceForm').addEventListener('submit', async function submitForm (event) {
     event.preventDefault();
     const N = parseInt(document.getElementById('numberInput').value, 10);
@@ -13,6 +32,7 @@ document.getElementById('sequenceForm').addEventListener('submit', async functio
             const response = await fetch(apiUrl);
             if (response.status === 403) {
                 output.textContent += `${i}. Forbidden\n`;
+                showMyCaptcha();
             } else if (response.status === 200) {
                 output.textContent += `${i}. OK\n`;
             } else if (response.status === 429 || response.status === 401) {
