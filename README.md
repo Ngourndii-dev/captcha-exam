@@ -1,1 +1,1 @@
-Deploiment : https://vercel.com/exam1/captcha-exam/GKXpWWYc7irAErzgsbJRMoBgZV8x
+Deploiment : https://captcha-exam-git-main-exam1.vercel.app/
